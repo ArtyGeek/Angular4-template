@@ -1,0 +1,53 @@
+@import '~assets/styles/common.less';
+.login {
+    &.form-group {
+        input {
+            position: relative;
+            padding-left: 60px;
+            height: 54px;
+            font-size: 16px;
+            font-weight: 600;
+            color: @gray1;
+            border: solid 2px #ebebeb;
+            .placeholder(@gray1);
+            &:hover,
+            &:focus {
+                color: @blue1;
+                .placeholder(@blue1);
+            }
+        }
+        .login-icon {
+            position: absolute;
+            background-repeat: no-repeat;
+            transition: 0.2s;
+            margin: 0;
+            left: 19px;
+            &:hover,
+            &:focus {
+                transition: 0.2s;
+            }
+        }
+        input[type="email"]+label {
+            background-image: url('@{url-img}/icons/email.svg');
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+            top: 37px;
+            &:hover,
+            &:focus {
+                background-image: url('@{url-img}/icons/email-hover.svg');
+            }
+        }
+        input[type="password"]+label {
+            background-image: url('@{url-img}/icons/password.svg');
+            background-size: 24px 24px;
+            width: 24px;
+            height: 24px;
+            top: 35px;
+            &:hover,
+            &:focus {
+                background-image: url('@{url-img}/icons/password-hover.svg');
+            }
+        }
+    }
+}

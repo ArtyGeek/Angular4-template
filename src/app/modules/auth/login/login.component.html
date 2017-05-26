@@ -1,0 +1,15 @@
+<div class="login">
+    <div class="login-container">
+        <form (submit)="onSubmit()" novalidate>
+            <app-input [name]="'email'" #email="ngModel" [(ngModel)]="model.email" [type]="'email'" [placeholder]="'Email'" [page]="'login'"
+                [validator]="validator.isEmailValid(email)"></app-input>
+            <app-input [name]="'password'" #password="ngModel" [(ngModel)]="model.password" [type]="'password'" [placeholder]="'Password'"
+                [page]="'login'" [validator]="validator.isPasswordValid(password)"></app-input>
+            <div class="login-bottom">
+                <app-checkbox [name]="'remember'" #remember="ngModel" [(ngModel)]="model.rememberMe" [page]="'login'" [caption]="'remember me'"></app-checkbox>
+                <div class="login-password-forgot" [routerLink]="['/password-recovery']">Forgot password</div>
+            </div>
+            <app-button name="submit" [capture]="'Login'" [styles]="'login blue full-width'"></app-button>
+        </form>
+    </div>
+</div>

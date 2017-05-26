@@ -1,0 +1,37 @@
+@import '~assets/styles/common.less';
+.header {
+    &.dropdown {
+        .dropdown-button {
+            margin: 6px;
+            border: solid @gray2;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3.5px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transition: 0.2s;
+            cursor: pointer;
+            &.active {
+                transform: rotate(-135deg);
+                transition: 0.2s;
+            }
+        }
+        ul {
+            right: 0;
+            top: 37px;
+            padding: 8px 0;
+            li {
+                cursor: pointer;
+                padding: 18px 0 13px 22px;
+                min-width: 193px;
+                font-size: 16px;
+                font-weight: 600;
+                color: @gray2;
+                background-color: white;
+                &:hover {
+                    background-color: @gray3;
+                }
+            }
+        }
+    }
+}

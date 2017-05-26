@@ -1,0 +1,23 @@
+<div class="popup admin-add-popup" *ngIf="visability">
+    <div class="popup-container">
+        <div class="popup-header">
+            <div class="popup-title">
+                Add admin
+            </div>
+            <div class="popup-close" (click)="onClose()"></div>
+        </div>
+        <div class="popup-body">
+            <form (submit)="onSubmit()" novalidate>
+                <app-input [name]="'email'" #email="ngModel" [(ngModel)]="model.email" [type]="'email'" [label]="'Email'" [placeholder]="'email'"
+                    [page]="'admin-add-popup'" [validator]="validator.isEmailValid(email)"></app-input>
+                <app-input [name]="'firstname'" #firstname="ngModel" [(ngModel)]="model.firstName" [type]="'text'" [label]="'Firstname'"
+                    [placeholder]="'Firstname'" [page]="'admin-add-popup'" [validator]="validator.isFirstnameValid(firstname)"></app-input>
+                <app-input [name]="'lastname'" #lastname="ngModel" [(ngModel)]="model.lastName" [type]="'text'" [label]="'Lastname'" [placeholder]="'Lastname'"
+                    [page]="'admin-add-popup'" [validator]="validator.isLastnameValid(lastname)"></app-input>
+                <div class="popup-submit-right">
+                    <app-button name="submit" [capture]="'Add'" [styles]="'size-180 blue'"></app-button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

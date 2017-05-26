@@ -1,0 +1,44 @@
+@import '~assets/styles/common.less';
+.checkbox {
+    width: 25px;
+    padding: 12.5px 0;
+    position: relative;
+    label {
+        cursor: pointer;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        top: 0;
+        left: 0;
+        background: #eee;
+        border: 1px solid #ddd;
+        &:after {
+            opacity: 0;
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 6px;
+            background: transparent;
+            top: 6px;
+            left: 4px;
+            border: 2px solid @blue1;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.checkbox-title {
+    display: none;
+}
+
+input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+input[type=checkbox]:checked+label:after {
+    opacity: 1;
+}

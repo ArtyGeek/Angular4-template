@@ -1,0 +1,6 @@
+<div [class]="'dropdown '+page">
+    <span class="dropdown-button" (click)="onDropdownButton($event)" [class.active]="isDropdownActive"></span>
+    <ul [class.active]="isDropdownActive">
+        <li *ngFor="let modelItem of model" (click)="onDropdownItemClick(modelItem)">{{modelItem}}</li>
+    </ul>
+</div>

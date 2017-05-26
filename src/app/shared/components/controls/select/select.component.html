@@ -1,0 +1,9 @@
+<div [class.invalid]="validator?.isValid" [class]="'form-group '+page">
+    <ng-select *ngIf="model" [options]="model.options" [(ngModel)]="mySelectValue" [multiple]="model.multiple" [placeholder]="model.placeholder"
+        [allowClear]="model.allowClear" (opened)="onSelectOpened()" (closed)="onSelectClosed()" (selected)="onSelected($event)"
+        (deselected)="onDeselected($event)" [noFilter]="isFilter" [highlightColor]="model.highlightColor" [highlightTextColor]="model.highlightTextColor">
+    </ng-select>
+    <div class="form-group-error" [hidden]="validator?.isValid">
+        {{ validator?.message }}
+    </div>
+</div>
